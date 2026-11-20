@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ethos · Sitio web
 
-## Getting Started
+Next.js 16 + React 19 + Tailwind CSS 4 + Motion.
 
-First, run the development server:
+## Correr en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Actualizar el catálogo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El catálogo se genera desde el Excel interno (hojas `CATALOGO_1` y `PRODUCTOS`; el Excel no se sube al repositorio). El script **descarta** precios, IVA, CUM, INVIMA, ATC, NIT,
+disponibilidad y códigos de proveedor; solo publica código Ethos, descripción, laboratorio, línea, vía y cadena de frío.
 
-## Learn More
+```bash
+node scripts/build-catalog.mjs "<ruta>/ListasdePreciosYCosto_DEFINITIVO.xlsx"
+```
 
-To learn more about Next.js, take a look at the following resources:
+Los nombres de laboratorio se formatean automáticamente; las excepciones y variantes que se unifican están en `LAB_OVERRIDE` del script.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Seguridad
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Encabezados de seguridad (CSP, HSTS, X-Frame-Options, etc.) en `next.config.ts`.
+- No hay backend ni variables secretas: el formulario solo arma un mensaje de WhatsApp. No subir archivos `.env*` ni los Excel con precios.
+- Revisar `npm audit` antes de cada publicación.
 
-## Deploy on Vercel
+## Pendientes de contenido
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Logo oficial en SVG (hoy hay uno provisional en `src/components/Logo.tsx`)
+- WhatsApp, teléfono, correo, dirección y horario reales en `src/lib/site.ts`
+- Historia, misión y visión oficiales en `src/app/nosotros/page.tsx`
+- Revisión legal de `src/app/legal/[doc]/page.tsx`
