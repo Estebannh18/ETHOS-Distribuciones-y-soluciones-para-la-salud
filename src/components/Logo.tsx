@@ -20,7 +20,7 @@ export function Isotipo({ className = "h-9 w-9", mono = false }: { className?: s
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
-      <span className={light ? "grid h-11 w-11 place-items-center rounded-xl bg-white p-1.5" : ""}>
+      <span className={light ? "grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white p-1.5" : "shrink-0"}>
         <Isotipo className={light ? "h-full w-full" : "h-10 w-10"} />
       </span>
       <span className="leading-none">
@@ -29,7 +29,7 @@ export function Logo({ light = false }: { light?: boolean }) {
         </span>
         <span className="hidden sm:block">
           <span className="mt-1 block h-px bg-teal" />
-          <span className={`mt-1 block text-[0.58rem] font-medium ${light ? "text-white/70" : "text-slogan"}`}>
+          <span className={`mt-1 block text-[0.58rem] font-medium whitespace-nowrap ${light ? "text-white/70" : "text-slogan"}`}>
             Distribución y soluciones para la salud
           </span>
         </span>

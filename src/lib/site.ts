@@ -1,7 +1,7 @@
 // Correo y horario: PENDIENTES de confirmar con Ethos (marcadores de posición).
 export const site = {
   name: "Ethos",
-  slogan: "Distribución y soluciones para la salud",
+  slogan: "La confianza que cuida la vida.",
   whatsapp: "573102620833",
   phone: "+57 310 262 0833",
   email: "comercial@ethos.com.co",

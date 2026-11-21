@@ -111,8 +111,8 @@ export function QuoteButton({ light = false }: { light?: boolean }) {
   return (
     <button
       onClick={() => setOpen(true)}
-      className={`relative flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold whitespace-nowrap transition ${
-        light ? "border-white/30 text-white hover:bg-white/10" : "border-line text-ethos hover:border-ethos"
+      className={`relative flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-bold whitespace-nowrap transition ${
+        light ? "border-white/30 text-white hover:bg-white/10" : "border-teal bg-teal text-white shadow-md shadow-teal/30 hover:-translate-y-0.5 hover:bg-teal-dark"
       }`}
     >
       <ClipboardList className="h-4 w-4" />
@@ -123,7 +123,7 @@ export function QuoteButton({ light = false }: { light?: boolean }) {
             key={count}
             initial={{ scale: 0.4 }}
             animate={{ scale: 1 }}
-            className="grid h-5 min-w-5 place-items-center rounded-full bg-teal px-1 text-[0.7rem] text-white"
+            className="grid h-5 min-w-5 place-items-center rounded-full bg-white px-1 text-[0.7rem] font-bold text-teal"
           >
             {count}
           </motion.span>
@@ -166,7 +166,7 @@ function QuoteDrawer() {
                 <p className="eyebrow text-teal">Lista de pedido</p>
                 <h2 className="mt-1 text-2xl font-bold text-ethos">Mi cotización</h2>
                 <p className="mt-1 text-sm text-ethos-ink/60">
-                  Arma tu lista y envíala. Te respondemos con precios y disponibilidad.
+                  Arma tu lista, envíala. Te respondemos con precios, disponibilidad.
                 </p>
               </div>
               <button onClick={() => setOpen(false)} aria-label="Cerrar" className="rounded-full p-2 hover:bg-mist">

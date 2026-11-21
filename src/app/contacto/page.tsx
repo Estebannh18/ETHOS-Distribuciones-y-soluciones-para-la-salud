@@ -11,18 +11,18 @@ export const metadata: Metadata = {
 
 const steps = [
   { title: "Escríbenos", text: "Déjanos tus datos o contáctanos por WhatsApp. Un asesor te llama en menos de 24 horas." },
-  { title: "Envía documentos", text: "RUT, Cámara de Comercio y resolución o permiso de funcionamiento vigente del establecimiento." },
-  { title: "Activamos tu cuenta", text: "Validamos la información, definimos condiciones comerciales y te asignamos un asesor." },
-  { title: "Haz tu primer pedido", text: "Arma tu lista desde el catálogo y envíala. Te confirmamos precios y fecha de entrega." },
+  { title: "Envía documentos", text: "RUT, Cámara de Comercio, resolución o permiso de funcionamiento vigente del establecimiento." },
+  { title: "Activamos tu cuenta", text: "Validamos la información, definimos condiciones comerciales, te asignamos un asesor." },
+  { title: "Haz tu primer pedido", text: "Arma tu lista desde el catálogo, envíala. Te confirmamos precios, fecha de entrega." },
 ];
 
-const clients = ["Droguerías", "Cadenas de farmacias", "Clínicas y hospitales", "IPS y EPS", "Consultorios", "Instituciones"];
+const clients = ["Droguerías", "Cadenas de farmacias", "Clínicas, hospitales", "IPS, EPS", "Consultorios", "Instituciones"];
 
 export default function ContactoPage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(to_bottom,#000,transparent)]" />
+        <div className="bg-aurora absolute inset-0 [mask-image:linear-gradient(to_bottom,#000,transparent)]" />
         <div className="relative mx-auto grid max-w-7xl gap-14 px-4 pt-16 pb-24 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:px-8 lg:pt-24">
           <div>
             <Reveal>
@@ -37,7 +37,7 @@ export default function ContactoPage() {
             <Reveal delay={0.1}>
               <ul className="mt-10 space-y-5">
                 {[
-                  { icon: Phone, label: "Teléfono y WhatsApp", value: site.phone },
+                  { icon: Phone, label: "Teléfono · WhatsApp", value: site.phone },
                   { icon: Mail, label: "Correo", value: site.email },
                   { icon: MapPin, label: "Dirección", value: site.address },
                   { icon: Clock, label: "Horario", value: site.hours },

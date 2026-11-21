@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
 import { QuoteButton } from "./QuoteList";
 import { nav, site, whatsappLink } from "@/lib/site";
@@ -62,9 +62,10 @@ export function Header() {
             href={whatsappLink("Hola Ethos, quiero más información.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-1.5 rounded-full bg-ethos px-4 py-2 text-sm font-semibold whitespace-nowrap text-white transition hover:bg-ethos-deep xl:flex"
+            className="hidden items-center gap-2 rounded-full bg-ethos px-5 py-2.5 text-sm font-bold whitespace-nowrap text-white shadow-md shadow-ethos/25 transition hover:-translate-y-0.5 hover:bg-ethos-deep lg:flex"
           >
-            Hablar con un asesor <ArrowUpRight className="h-4 w-4" />
+            <MessageCircle className="h-4 w-4" /> <span className="xl:hidden">Asesor</span>
+            <span className="hidden xl:inline">Hablar con un asesor</span>
           </a>
           <button
             className="rounded-full p-2 text-ethos md:hidden"

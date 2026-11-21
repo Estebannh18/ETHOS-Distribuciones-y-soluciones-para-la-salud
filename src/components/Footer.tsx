@@ -11,8 +11,8 @@ export function Footer() {
           <div className="md:col-span-5">
             <Logo light />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
-              Llevamos medicamentos y productos para la salud de los laboratorios más reconocidos del país a
-              droguerías, clínicas e instituciones, con cumplimiento y calidez.
+              Llevamos medicamentos, productos para la salud de los laboratorios más reconocidos del país a
+              droguerías, clínicas, instituciones, con cumplimiento, calidez.
             </p>
           </div>
           <div className="md:col-span-2">

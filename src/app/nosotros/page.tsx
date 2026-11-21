@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, HeartHandshake, Clock, Eye, Leaf, Warehouse, ScanLine, Thermometer, FileCheck2 } from "lucide-react";
+import { ArrowRight, Eye, ClipboardCheck, Handshake, Clock, BadgeCheck, HeartHandshake, Warehouse, ScanLine, Thermometer, FileCheck2 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Isotipo } from "@/components/Logo";
 
@@ -9,26 +9,28 @@ export const metadata: Metadata = {
   description: "Quiénes somos, cómo trabajamos y nuestro compromiso con la calidad.",
 };
 
-// Textos provisionales: reemplazar por la historia, misión y visión oficiales de Ethos.
+// Misión, visión y valores corporativos: texto oficial entregado por Ethos.
 const values = [
-  { icon: Clock, title: "Cumplimiento", text: "Lo que prometemos en el pedido es lo que llega a tu puerta, en la fecha acordada." },
-  { icon: Eye, title: "Transparencia", text: "Información clara sobre disponibilidad, tiempos y condiciones, sin letra pequeña." },
-  { icon: HeartHandshake, title: "Cercanía", text: "Relaciones de largo plazo con clientes y laboratorios, con trato humano." },
-  { icon: Leaf, title: "Responsabilidad", text: "Cuidamos la salud de las personas y el entorno en cada decisión que tomamos." },
+  { icon: Eye, title: "Honestidad", text: "Actuamos con transparencia en cada relación comercial." },
+  { icon: ClipboardCheck, title: "Responsabilidad", text: "Cumplimos nuestros compromisos y asumimos las consecuencias de nuestras decisiones." },
+  { icon: Handshake, title: "Confianza", text: "Construimos relaciones duraderas con clientes y proveedores." },
+  { icon: Clock, title: "Compromiso", text: "Trabajamos para responder oportunamente a las necesidades de nuestros clientes." },
+  { icon: BadgeCheck, title: "Calidad", text: "Procuramos ofrecer productos y servicios que cumplan los estándares requeridos." },
+  { icon: HeartHandshake, title: "Servicio", text: "Ponemos las necesidades de nuestros clientes en el centro de nuestras acciones." },
 ];
 
 const quality = [
-  { icon: FileCheck2, title: "Origen verificado", text: "Compramos directamente a laboratorios titulares y distribuidores autorizados." },
-  { icon: Warehouse, title: "Almacenamiento", text: "Bodegas con control de temperatura y humedad bajo buenas prácticas." },
-  { icon: Thermometer, title: "Cadena de frío", text: "Protocolos validados y registro de temperatura para productos termolábiles." },
-  { icon: ScanLine, title: "Trazabilidad", text: "Seguimiento por lote y fecha de vencimiento desde la recepción hasta la entrega." },
+  { icon: FileCheck2, title: "Origen verificado", text: "Compramos a laboratorios titulares, distribuidores autorizados." },
+  { icon: Warehouse, title: "Almacenamiento", text: "Bodegas con control de temperatura, humedad, bajo buenas prácticas." },
+  { icon: Thermometer, title: "Cadena de frío", text: "Protocolos validados, registro de temperatura para productos termolábiles." },
+  { icon: ScanLine, title: "Trazabilidad", text: "Seguimiento por lote, fecha de vencimiento: de la recepción a la entrega." },
 ];
 
 export default function NosotrosPage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(to_bottom,#000,transparent)]" />
+        <div className="bg-aurora absolute inset-0 [mask-image:linear-gradient(to_bottom,#000,transparent)]" />
         <div className="relative mx-auto grid max-w-7xl items-end gap-10 px-4 pt-16 pb-20 sm:px-6 lg:grid-cols-[1.4fr_1fr] lg:px-8 lg:pt-24">
           <Reveal>
             <p className="eyebrow text-teal">Nosotros</p>
@@ -38,9 +40,10 @@ export default function NosotrosPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-lg leading-relaxed text-ethos-ink/70">
-              Ethos nace para conectar a los laboratorios farmacéuticos con droguerías, clínicas e instituciones de
-              salud, con una operación confiable y un servicio que se siente cercano.
+              Ethos nace para conectar a los laboratorios farmacéuticos con droguerías, clínicas, instituciones de
+              salud: una operación confiable, un servicio atento.
             </p>
+            <p className="text-ring mt-5 text-2xl font-bold tracking-tight">La confianza que cuida la vida.</p>
           </Reveal>
         </div>
       </section>
@@ -53,16 +56,29 @@ export default function NosotrosPage() {
               <Isotipo mono className="h-full w-full" />
             </div>
             <p className="eyebrow text-leaf-light">Misión</p>
-            <p className="relative mt-5 text-2xl leading-snug font-semibold sm:text-3xl">
-              Distribuir medicamentos y productos para la salud con calidad, oportunidad y responsabilidad, para que
-              nuestros clientes cuiden mejor a las personas.
+            <p className="relative mt-5 text-xl leading-snug font-semibold sm:text-2xl">
+              En ETHOS trabajamos bajo el compromiso de ser un aliado confiable en la distribución y comercialización
+              de medicamentos e insumos para la salud, ofreciendo soluciones oportunas, productos de calidad y un
+              servicio responsable que responda a las necesidades de nuestros clientes.
+            </p>
+            <p className="relative mt-5 leading-relaxed text-white/75">
+              Nos guiamos por principios de honestidad, transparencia, responsabilidad y compromiso, construyendo
+              relaciones de confianza con nuestros clientes y proveedores, porque creemos que cada entrega representa
+              una oportunidad para contribuir al bienestar y al cuidado de la vida.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="rounded-3xl border border-line bg-mist/60 p-10 sm:p-14">
             <p className="eyebrow text-teal">Visión</p>
-            <p className="mt-5 text-2xl leading-snug font-semibold text-ethos sm:text-3xl">
-              Ser el aliado de distribución farmacéutica más confiable de Colombia, reconocido por su cumplimiento y su
-              cercanía.
+            <p className="mt-5 text-xl leading-snug font-semibold text-ethos sm:text-2xl">
+              Para el año 2030, ETHOS será reconocida como una empresa referente en la distribución y comercialización
+              de medicamentos e insumos para la salud en Santander, destacándose por la calidad de sus productos, la
+              eficiencia de sus procesos, la confiabilidad de su servicio y la construcción de relaciones sólidas con
+              clientes y proveedores.
+            </p>
+            <p className="mt-5 leading-relaxed text-ethos-ink/70">
+              Aspiramos a consolidar una organización sostenible, competitiva e innovadora, con capacidad de ampliar su
+              cobertura y aportar al fortalecimiento del sector salud, manteniendo siempre nuestros principios y el
+              compromiso con el bienestar de las personas.
             </p>
           </Reveal>
         </div>
@@ -73,9 +89,9 @@ export default function NosotrosPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="eyebrow text-teal">Lo que nos mueve</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-ethos sm:text-5xl">Nuestros valores</h2>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-ethos sm:text-5xl">Nuestros valores corporativos</h2>
           </Reveal>
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.07}>
                 <v.icon className="h-7 w-7 text-teal" />
@@ -96,7 +112,7 @@ export default function NosotrosPage() {
               Cada caja, con su historia completa.
             </h2>
             <p className="mt-5 text-lg text-ethos-ink/70">
-              Operamos bajo la normativa sanitaria colombiana para el almacenamiento y la distribución de medicamentos.
+              Operamos bajo la normativa sanitaria colombiana para almacenar, distribuir medicamentos.
               Así es como cuidamos cada producto antes de que llegue a ti.
             </p>
           </Reveal>

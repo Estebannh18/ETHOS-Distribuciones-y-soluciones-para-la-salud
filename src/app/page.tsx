@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Snowflake, ShieldCheck, Truck, Headset, MapPinned } from "lucide-react";
 import { HeroSearch } from "@/components/home/HeroSearch";
+import { HeroCtas } from "@/components/home/HeroCtas";
+import { MessageCircle } from "lucide-react";
 import { HeroVisual } from "@/components/home/HeroVisual";
 import { Reveal } from "@/components/Reveal";
 import { featuredLabs, stats, categoryCounts, demoSearch } from "@/lib/catalog";
@@ -10,22 +12,22 @@ const services = [
   {
     icon: Truck,
     title: "Distribución",
-    text: "Despachos programados y urgentes a droguerías, clínicas, IPS e instituciones. Tu pedido sale completo y a tiempo.",
+    text: "Despachos programados, urgentes a droguerías, clínicas, IPS, instituciones. Tu pedido sale completo, a tiempo.",
   },
   {
     icon: Snowflake,
     title: "Cadena de frío",
-    text: "Biológicos y termolábiles transportados entre 2 °C y 8 °C, con monitoreo de temperatura de bodega a destino.",
+    text: "Biológicos, termolábiles transportados entre 2 °C y 8 °C, con monitoreo de temperatura de bodega a destino.",
   },
   {
     icon: Headset,
     title: "Asesoría comercial",
-    text: "Un asesor que conoce tu negocio, te ayuda a armar el pedido y te mantiene al tanto de novedades del portafolio.",
+    text: "Un asesor que conoce tu negocio, te ayuda a armar el pedido, te mantiene al tanto de novedades del portafolio.",
   },
   {
     icon: MapPinned,
     title: "Cobertura",
-    text: "Rutas propias y aliados logísticos para llegar a las principales ciudades y municipios del país.",
+    text: "Rutas propias, aliados logísticos: llegamos a las principales ciudades, municipios del país.",
   },
 ];
 
@@ -37,7 +39,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(to_bottom,#000,transparent_85%)]" />
+        <div className="bg-aurora absolute inset-0 [mask-image:linear-gradient(to_bottom,#000,transparent_85%)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pt-12 pb-20 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:px-8 lg:pt-20 lg:pb-28">
           <div>
             <Reveal>
@@ -54,11 +56,14 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ethos-ink/70">
-                Medicamentos y productos para la salud de los laboratorios que ya conoces, entregados con
-                cumplimiento, cadena de frío y un asesor que responde.
+                Medicamentos, productos para la salud de los laboratorios que ya conoces, entregados con
+                cumplimiento, cadena de frío, un asesor que responde.
               </p>
             </Reveal>
-            <Reveal delay={0.24} className="mt-8 max-w-xl">
+            <Reveal delay={0.22} className="mt-8">
+              <HeroCtas />
+            </Reveal>
+            <Reveal delay={0.28} className="mt-6 max-w-xl">
               <HeroSearch />
             </Reveal>
           </div>
@@ -121,7 +126,7 @@ export default function Home() {
                 Del laboratorio a tu mostrador, sin vueltas.
               </h2>
               <p className="mt-5 max-w-md text-lg text-ethos-ink/70">
-                Nos encargamos de la parte difícil: inventario, almacenamiento, transporte y seguimiento. Tú te
+                Nos encargamos de la parte difícil: inventario, almacenamiento, transporte, seguimiento. Tú te
                 enfocas en atender.
               </p>
             </Reveal>
@@ -155,8 +160,8 @@ export default function Home() {
               Lo que necesita frío, llega frío.
             </h2>
             <p className="mt-5 max-w-lg text-lg text-white/70">
-              {stats.cold} referencias de biológicos, vacunas y termolábiles viajan con protocolos de embalaje
-              validados y registro de temperatura durante todo el trayecto.
+              {stats.cold} referencias de biológicos, vacunas, termolábiles viajan con protocolos de embalaje
+              validados, registro de temperatura durante todo el trayecto.
             </p>
             <Link
               href="/catalogo?frio=1"
@@ -218,7 +223,7 @@ export default function Home() {
             <div>
               <h2 className="text-2xl font-bold text-ethos sm:text-3xl">Calidad que se puede rastrear</h2>
               <p className="mt-2 max-w-2xl text-ethos-ink/70">
-                Productos adquiridos directamente a laboratorios titulares, almacenamiento bajo buenas prácticas y
+                Productos adquiridos directamente a laboratorios titulares, almacenamiento bajo buenas prácticas,
                 trazabilidad por lote en cada despacho.
               </p>
             </div>
@@ -236,23 +241,23 @@ export default function Home() {
           <div className="relative max-w-2xl">
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">¿Armamos tu primer pedido?</h2>
             <p className="mt-4 text-lg text-white/75">
-              Busca en el catálogo, agrega productos a tu cotización y envíala por WhatsApp. Te respondemos con
-              precios y disponibilidad el mismo día.
+              Busca en el catálogo, agrega productos a tu cotización, envíala por WhatsApp. Te respondemos con
+              precios, disponibilidad el mismo día.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/catalogo"
-                className="inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3.5 font-semibold transition hover:bg-teal-dark"
+                className="inline-flex items-center gap-2 rounded-full bg-teal px-8 py-4 text-lg font-bold shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-teal-dark"
               >
-                Ir al catálogo <ArrowRight className="h-4 w-4" />
+                Solicitar cotización <ArrowRight className="h-5 w-5" />
               </Link>
               <a
-                href={whatsappLink("Hola Ethos, quiero hacerme cliente.")}
+                href={whatsappLink("Hola Ethos, quiero hablar con un asesor.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 font-semibold transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-bold text-ethos shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-mist"
               >
-                Quiero ser cliente
+                <MessageCircle className="h-5 w-5" /> Hablar con un asesor
               </a>
             </div>
           </div>

@@ -59,12 +59,12 @@
   background: conic-gradient(from 210deg, #0a72c4, #0b4f8a, #0fa39b, #0a72c4);
 }
 
-/* Rejilla tenue tipo papel milimetrado, guiño al mundo farmacéutico */
-@utility bg-grid {
+/* Fondo suave con resplandores de los colores de marca (sin líneas ni cuadrículas) */
+@utility bg-aurora {
   background-image:
-    linear-gradient(to right, rgb(11 79 138 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(11 79 138 / 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
+    radial-gradient(55% 70% at 88% 0%, rgb(15 163 155 / 0.16), transparent 70%),
+    radial-gradient(50% 60% at 0% 25%, rgb(10 114 196 / 0.11), transparent 70%),
+    radial-gradient(40% 50% at 55% 105%, rgb(88 176 76 / 0.09), transparent 70%);
 }
 
 @utility eyebrow {
